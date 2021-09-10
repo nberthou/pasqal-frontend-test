@@ -14,6 +14,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(js|jsx)$/,
+        loader: "babel-loader",
+      },
+      {
         test: /\.(ts|tsx)$/,
         loader: "awesome-typescript-loader",
       },
@@ -26,6 +30,11 @@ module.exports = {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
+      {
+        test: /\.svg$/,
+        exclude: /node_modules/,
+        loader: 'svg-react-loader',
+    }
     ],
   },
   plugins: [

@@ -2,6 +2,8 @@ import { useState } from "react";
 import * as ReactDOM from "react-dom";
 import data from "./data.json";
 
+import CrossIcon from "./icons/cross.svg";
+
 import "./index.css";
 
 const Root = () => {
@@ -25,6 +27,7 @@ const Root = () => {
       <div className="Root__separator" />
 
       {/* TODO: Insert your component below */}
+      <CrossIcon />
       <div className="Root__select">PUT THE COMPONENT HERE</div>
     </div>
   );

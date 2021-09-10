@@ -2,14 +2,16 @@
 
 We are going to create a smart multi-select component.
 
-In real life, data would be served by an API. For the sake of the exercise, we will mock the server with [getData](./src/api.ts).
+In real life, data would be served by an API. For the sake of the exercise, we will mock the server calls with [getData](./src/api.ts).
+
+We provide you with two [icons](./src/icons) that you can use in this exercise. You can add any additional icon you need there, and you should be able to use them as react components thanks to the [react-svg-loader](https://github.com/boopathi/react-svg-loader).
 
 Here are some rules to follow:
 
 - Frameworks and libraries are tolerated as long as they do not help proving the features requested by the exercise.
-- ES6 features should be used where appropriate.
 - React functional components only, no classes.
 - Cross-browser compatibility is not required for this exercise. You can specify which browser we should view your work in.
+- The files provided to you are written in Typescript, but you can totally do the exercise in Javascript. You don't even need to change anything, JS imports should work fine from index.tsx.
 
 In order to reach the target component, this exercise is split in 3 progressive steps. Feel free to create one commit per step in your final solution.
 
