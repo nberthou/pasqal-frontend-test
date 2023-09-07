@@ -1,13 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as ReactDOM from "react-dom";
 import data from "./data.json";
 
 import CrossIcon from "./icons/cross.svg";
+import { Select } from './components/Select'
+
+import { getData, Item } from "./api";
+
 
 import "./index.css";
 
 const Root = () => {
   const [selectedItems, setSelectedItems] = useState([]);
+  const [selectData, setSelectData] = useState<Item[]>([]);
+  const [selectPlaceholder, setSelectPlaceholder] = useState<string>('placeholder');
+
+  useEffect(() => {
+   const fetchData = async () => {
+    return await getData();
+   }
+
+   fetchData().then((data) => {
+    setSelectData(data);
+   })
+  }, [])
 
   return (
     <div className="Root">
@@ -28,11 +44,19 @@ const Root = () => {
 
       {/* TODO: Insert your component below */}
       <CrossIcon />
-      <div className="Root__select">PUT THE COMPONENT HERE</div>
+      <div className="Root__select">
+        <Select
+          setSelectedItems={setSelectedItems}
+          selectedItems={selectedItems}
+          data={selectData}
+          placeholder={selectPlaceholder}
+          setPlaceholder={setSelectPlaceholder}
+        />
+      </div>
     </div>
   );
 };
 
-console.log(data);
+console.log(getData());
 
 ReactDOM.render(<Root />, document.getElementById("root"));

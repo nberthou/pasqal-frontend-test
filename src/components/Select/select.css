@@ -1,0 +1,41 @@
+.Select__Container {
+    width: 15rem;
+    /* background-color: red; */
+}
+
+.Select__Button {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px 5px 0 0 ;
+    padding: 0.5rem 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+.Select__Button__Caret {
+    min-width: 1.5rem;
+}
+
+.Select__Dropdown {
+    background-color: white;
+    border: 1px solid black;
+    border-radius:  0 0 5px 5px;
+    z-index: 1;
+}
+
+.Select__Option {
+    font-family: sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+
+    &:hover {
+        background-color: blue;
+        color: white;
+    }
+}
+.Select__OptionSelected {
+    background-color: lightblue;
+}
