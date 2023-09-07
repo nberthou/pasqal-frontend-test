@@ -13,7 +13,6 @@ import "./index.css";
 const Root = () => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectData, setSelectData] = useState<Item[]>([]);
-  const [selectPlaceholder, setSelectPlaceholder] = useState<string>('placeholder');
 
   useEffect(() => {
    const fetchData = async () => {
@@ -49,8 +48,6 @@ const Root = () => {
           setSelectedItems={setSelectedItems}
           selectedItems={selectedItems}
           data={selectData}
-          placeholder={selectPlaceholder}
-          setPlaceholder={setSelectPlaceholder}
         />
       </div>
     </div>

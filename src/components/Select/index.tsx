@@ -10,9 +10,7 @@ import CrossIcon from '../../icons/cross.svg'
 type SelectProps = {
     setSelectedItems: (items: string[] | ((prevState: string[]) => string[])) => void
     selectedItems: string[]
-    placeholder?: string
     data: Item[]
-    setPlaceholder: (placeholder: string) => void
 }
 
 type SelectItemProps = {
