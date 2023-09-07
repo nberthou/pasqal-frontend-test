@@ -13,6 +13,7 @@ import "./index.css";
 const Root = () => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectData, setSelectData] = useState<Item[]>([]);
+  const [selectSearchInput, setSelectSearchInput] = useState<string>('');
 
   useEffect(() => {
    const fetchData = async () => {
@@ -23,6 +24,17 @@ const Root = () => {
     setSelectData(data);
    })
   }, [])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      return await getData(selectSearchInput);
+     }
+  
+     fetchData().then((data) => {
+      setSelectData(data);
+     })
+  }, [selectSearchInput])
+
 
   return (
     <div className="Root">
@@ -48,6 +60,8 @@ const Root = () => {
           setSelectedItems={setSelectedItems}
           selectedItems={selectedItems}
           data={selectData}
+          selectSearchInput={selectSearchInput}
+          setSelectSearchInput={setSelectSearchInput}
         />
       </div>
     </div>

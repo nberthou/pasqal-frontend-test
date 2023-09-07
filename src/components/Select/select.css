@@ -59,11 +59,29 @@
     align-items: center;
     font-weight: bold;
     cursor: pointer;
-    flex: 1;
     padding: 0.25rem;
 }
 
 .Select__Button__Placeholder__Tag__Close {
     margin-left: 0.5rem;
     width: 0.75rem;
+}
+
+.Select__Search {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.Select__Input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: none;
+}
+
+.Select_ClearSearch {
+    cursor: pointer;
+    color: red;
 }

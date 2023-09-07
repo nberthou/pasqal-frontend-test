@@ -6,11 +6,14 @@ import './select.css'
 import CaretUp from '../../icons/up.svg'
 import CaretDown from '../../icons/down.svg'
 import CrossIcon from '../../icons/cross.svg'
+import SearchIcon from '../../icons/search.svg'
 
 type SelectProps = {
     setSelectedItems: (items: string[] | ((prevState: string[]) => string[])) => void
     selectedItems: string[]
     data: Item[]
+    selectSearchInput: string;
+    setSelectSearchInput: (input: string) => void;
 }
 
 type SelectItemProps = {
@@ -22,7 +25,9 @@ type SelectItemProps = {
 export const Select: FC<SelectProps>  = ({
     setSelectedItems,
     selectedItems,
-    data
+    data,
+    selectSearchInput,
+    setSelectSearchInput,
 }) => {
     const [isToggled, setIsToggled] = useState<boolean>(false)
 
@@ -62,6 +67,14 @@ export const Select: FC<SelectProps>  = ({
         </div>
         </button>
         {isToggled && (
+            <>
+            <div className='Select__Search'>
+                <div className='Select__SearchIcon'>
+                    <SearchIcon />
+                </div>
+                <input className='Select__Input' type='text' value={selectSearchInput} onChange={(e) => setSelectSearchInput(e.target.value)} />
+                <div className="Select_ClearSearch" onClick={() => setSelectSearchInput('')}><CrossIcon /></div>
+            </div>
             <div className='Select__Dropdown'>
                 {
                     data.map((item) => (
@@ -69,6 +82,7 @@ export const Select: FC<SelectProps>  = ({
                     ))
                 }
             </div>
+            </>
         )}
         </div>
     )
