@@ -54,7 +54,7 @@ const Root = () => {
       <div className="Root__separator" />
 
       {/* TODO: Insert your component below */}
-      <CrossIcon />
+      <CrossIcon onClick={() => setSelectedItems([])} />
       <div className="Root__select">
         <Select
           setSelectedItems={setSelectedItems}
